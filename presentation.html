@@ -1,0 +1,1833 @@
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=1024" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<title>Cooperative Wireless Communications: Present and Future</title>
+
+	<meta name="description" content="Presentation of PHD Thesis" />
+	<meta name="author" content="elrohir" />
+
+	<!-- jquery and UI-->
+	<link rel="stylesheet" href="css/jquery-ui.custom.min.css">
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+
+	<!-- Latex Compiler -->
+	<script>
+	  MathJax = {
+	      tex: {
+		  inlineMath: [['$', '$'], ['\\(', '\\)']]
+	      }
+	  };
+	</script>
+	<script type="text/javascript" id="MathJax-script" async  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>	
+
+	<!-- Load resources -->
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+	<!-- style -->
+	<link href="css/thesis.css" rel="stylesheet" />
+</head>
+
+<body class="impress-not-supported">
+
+	<!--    FALLBACK -->
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+	</div>
+	<div id="global-wrapper">
+		<div id="navmenu-wrapper">
+			<span class="rotate menutitle">Index</span>
+			<div id="navmenu">
+				<h3>Introduction</h3>
+				<div>
+					<ul>
+						<li><a href="#titlepage" class="navanchor">Title Page</a></li>
+						<li><a href="#intro" class="navanchor">Motivation I</a>	<a href="#waitwat" class="navanchor">II</a>	<a href="#weknow" class="navanchor">III</a> <a href="#notthesame" class="navanchor">IV</a>  <a href="#so" class="navanchor">V</a></li>
+					</ul>
+				</div>
+				<h3>Part I: The Present</h3>
+				<div>
+					<ul>
+						<li>
+							<a href="#overview" class="navanchor">Theory</a>
+							<ul>
+								<li><a href="#theme1" class="navanchor">Summary</a>
+									<li><a href="#IT" class="navanchor">Information Theory</a></li>
+									<li><a href="#PHY" class="navanchor">PHY I</a> <a href="#PHY2" class="navanchor">II</a></li>
+									<li><a href="#MAC" class="navanchor">MAC I</a> <a href="#MAC2" class="navanchor">II</a> <a href="#MAC3" class="navanchor">III</a> <a href="#MAC4" class="navanchor">IV</a></li>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#overview2" class="navanchor">Practice</a><ul>
+							<li><a href="#theme2" class="navanchor">Summary</a>
+								<li><a href="#SIM" class="navanchor">System Level Sim. I</a> <a href="#SIM2" class="navanchor">II</a> <a href="#SIM3" class="navanchor">III</a></li>
+								<li><a href="#INT" class="navanchor">Interference</a></li>
+								<li><a href="#SCH" class="navanchor">Scheduling I</a> <a href="#SCH2" class="navanchor">II</a> <a href="#SCH3" class="navanchor">III</a></li>
+								<li><a href="#AC" class="navanchor">Admission Control</a></li>
+							</li>
+						</ul></li>
+					</ul>
+				</div>
+				<h3>Part II: The Near Future</h3>
+				<div>
+					<ul>
+						<li><a href="#overview3" class="navanchor">Theory</a>
+							<ul>
+								<li><a href="#theme3" class="navanchor">Summary</a>
+									<li><a href="#MOD" class="navanchor">Cooperative Cognitive Model</a></li>
+									<li><a href="#GAIN" class="navanchor">Social Spectrum Gain I</a> <a href="#GAIN2" class="navanchor">II</a></li>
+									<li><a href="#INF" class="navanchor">Mutual Information Distribution</a></li>
+									<li><a href="#STA" class="navanchor">Static Decision-Making</a></li>
+									<li><a href="#DYN" class="navanchor">Dynamic Decision-Making</a></li>
+								</li>
+							</ul>
+						</li>
+						<li><a href="#overview4" class="navanchor">Practice</a>
+							<ul>
+								<li><a href="#theme4" class="navanchor">Summary</a>
+									<li><a href="#3PT" class="navanchor">Third Party RN Model</a></li>
+									<li><a href="#1RN" class="navanchor">Gain of a Single RN</a></li>
+									<li><a href="#NRN" class="navanchor">Gain with Massive RNs</a></li>
+									<li><a href="#EXP" class="navanchor">Examples</a></li>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+				<h3>Part III: The Distant Future</h3>
+				<div>
+					<ul>
+						<li><a href="#overview5" class="navanchor">Theory</a>
+							<ul>
+								<li><a href="#theme5" class="navanchor">Summary</a>
+									<li><a href="#C5G" class="navanchor">4G vs 5G</a>
+										<li><a href="#SCA" class="navanchor">Scaling Laws Models I</a> <a href="#SCA2" class="navanchor">II</a>
+											<li><a href="#PRO" class="navanchor">Protocol Models I</a> <a href="#PRO2" class="navanchor">II</a></li>
+											<li><a href="#CAP" class="navanchor">Capacity Scaling Laws I</a> <a href="#CAP2" class="navanchor">II</a></li>
+											<li><a href="#CDFM" class="navanchor">Better Traffic Model</a></li>
+										</li>
+									</ul>
+								</li>
+								<li><a href="#overview6" class="navanchor">Practice</a>
+									<ul>
+										<li><a href="#theme6" class="navanchor">Summary</a>
+											<li><a href="#WID" class="navanchor">Information Theory I</a> <a href="#MCB" class="navanchor">II</a></li>
+											<li><a href="#NPHY" class="navanchor">Noncoherent PHY I</a> <a href="#MPHY" class="navanchor">II</a> <a href="#MPHY2" class="navanchor">III</a></li>
+											<li><a href="#TMAC" class="navanchor">Directive MAC I</a> <a href="#MMAC" class="navanchor">II</a></li>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+						<h3>Conclusions</h3>
+						<div>
+							<ul>
+								<li><a href="#CON" class="navanchor">Conclusions I</a> <a href="#CON2" class="navanchor">II</a> <a href="#CON3" class="navanchor">III</a></li>
+								<li><a href="#output" class="navanchor">Research Output</a></li>
+							</ul>
+						</div>
+					</div>
+					<a href="?print" title="Printable HTML version"><img src="./img/print.svg" class="icon"/></a>
+					<a href="./slides.pdf" title="Download PDF slides"><img src="./img/mono-slideshow.svg" class="icon"/></a>
+					<a href="./ThesisFelipeG&oacute;mezCuba34880574Q.pdf" title="Download Thesis Book PDF"><img src="./img/icon-pdf.svg" class="icon"/></a>
+					<a href="./presentation.html" title="Reload this page"><img src="./img/refresh.svg" class="icon"/></a>
+				</div>
+
+				<!--    PRESENTATION -->
+				<div id="impress-wrapper">
+					<div id="impress">
+						<div id="titlepage" class="step fakeppt clear" data-x="-0150" data-y="-5500"  data-scale="1">
+							<h1>Cooperative Wireless Communications: Present and Future</h1>
+							<h2>Felipe G&oacute;mez Cuba</h2>
+							<h3>Thesis Presentation for <br/><em>Programa de Doutoramento en Enxe&ntilde;er&iacute;a Telem&aacute;tica</em></h3>
+							<h2>May 8th 2015</h2>
+						</div>
+						<div id="intro" class="step fakeppt persist appearify" data-x="-0150" data-y="-5500" data-z="-1" data-scale="1">
+							<div class="slidetitle">Motivation</div>
+							<q> Mobile data traffic will increase nearly 11-fold between 2013 and 2018</q>
+							<strong>Cisco Visual Networking Index</strong>
+							<q> The wireless industry has reached the theoretical limit of how fast networks can go</q>
+							<strong>K. Fitcher, Connected Planet</strong>
+						</div>
+						<div id="waitwat" class="step glass persist appearify" data-x="0100" data-y="-5300" data-scale="1.5">
+							<div class="columnframe">
+								<div class="twocolwidth"><h1> One of these must be wrong</h1></div>
+								<img  class="twocolwidth"  src="img/indecisive-silhouette.svg" alt="WAT"/>
+							</div>
+						</div>
+						<div id="weknow" class="step glass tease persist" data-x="0100" data-y="-4700" data-scale="1.5">
+							<h1>We know</h1>
+							<ol>
+								<li>The Shannon limit on a (AWGN) link</li>
+								<li>How to achieve it</li>
+							</ol>
+						</div>
+						<div id="notthesame" class="step glass tease persist" data-x="0100" data-y="-4000" data-scale="1.5">
+							<h1>But</h1>
+							<ol class="columnlist columnframe">
+								<li  class="twocolwidth">
+									<p>The capacity of this</p>
+									<img class="fillwidth" src="img/rede.svg" alt="This is not XKCD"/>
+									<p class="figcaption">$2$-User Cooperative Channel</p>
+								</li>
+								<li  class="twocolwidth">
+									<p>Is not $2\times$ the capacity of one of these</p>
+									<img class="fillwidth" src="img/p2p.svg" alt="Seriously this is not XKCD!"/>
+									<p class="figcaption">Point to Point Channel</p>
+								</li>
+							</ol>
+						</div>
+
+						<div id="so" class="step glass tease persist" data-x="0100" data-y="-3300" data-scale="1.5">
+							<h1>So...</h1>
+							<ol>
+								<li>There is still room to improve rates</li>
+								<li>But analyzing one link at a time does not help</li>
+								<li>We must improve wireless in a <strong>networked</strong> context</li>
+							</ol>
+						</div>
+						<div id="overview" class="step persist overview" data-x="-0150" data-y="-1400" data-scale="4">
+							<h1>Cooperative Wireless Communications: Present and Future</h1>
+							<h3>Thesis Presentation for <br/><em>Programa de Doutoramento en Enxe&ntilde;er&iacute;a Telem&aacute;tica</em></h3>
+							<h2>Felipe G&oacute;mez Cuba</h2>
+							<img class="fillwidth" src="img/overview.svg" alt="Stop looking at the alt texts!"/>
+						</div>
+						<div id="theme1" class="step slide appearify persist" data-x="-0950" data-y="-1550" data-z="+50">
+							<div class="slidetitle">Part 1 :: Theoretical Aspects</div>
+							<h2>The Theory of Cooperative Communications</h2>
+							<h1>Cooperative Diversity for Wireless Networks</h1>
+							<ol>
+								<li class="doublebreak">Information theoretic models</li>
+								<li class="doublebreak">PHY layer cooperative signal</li>
+								<li class="doublebreak">MAC layer functional taxonomy</li>
+							</ol>
+						</div>
+						<div id="IT" class="step slide" data-x="-0950" data-y="-1550" data-z="-0500" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Information Theoretic Model</div>
+							<h3 class="contrib">Contribution C1.1.1: IT Survey</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<img class="fillwidth" src="img/RC.svg" alt="This is private information!"/>
+									<p class="figcaption"> Relay Channel</p>
+									<span style="font-size:80%;">
+										$$\begin{array}{rl}
+										y_\mathrm{r}[n] &= h_\mathrm{sr}[n]*x[n]+z_\mathrm{r}[n]\\
+										y[n] &= h_\mathrm{sd}[n]*x[n]+h_\mathrm{rd}[n]*x_\mathrm{r}[n]+z_\mathrm{r}[n]\\
+										& p.d.f. P(x_\mathrm{r}[n]=f(\{y_\mathrm{r}\}_{0}^{n-1}))
+										\end{array}$$
+									</span>
+								</div>
+								<div class="twocolwidth">
+									<p>Variety of relaying techniques</p>
+									<ol>
+										<li>Relay function $P(X_r=f(Y_r))$ <br/>(AF, DF...)</li>
+										<li >Time division <br/>(static vs dynamic)</li>
+										<li >Orthogonality <br/>(NBL-AF)</li>
+										<li >Multi-level encoding <br/>(EDDF)</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div id="PHY" class="step slide" data-x="-0950" data-y="-1550" data-z="-1250" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Physical Layer Signaling</div>
+							<h3 class="contrib" >Contribution C1.1.2: PHY Survey</h3>
+							<ol class="columnframe columnlist">
+								<li class="twocolwidth">
+									<strong> Path Selection Combining</strong>
+									<img class="fillwidth" src="img/OR_phase2.svg" alt="This is private information!"/>
+									<p class="figcaption"> Best Relay Cooperation</p>
+								</li>
+								<li class="twocolwidth">
+									<strong> Channel Code Combining</strong>
+									<img class="fillwidth" src="img/conv14.svg" alt="This is private information!"/>
+									<p class="figcaption"> Channel Coding Cooperation</p>
+								</li>
+							</ol>
+						</div>
+
+						<div id="PHY2" class="step slide" data-x="-0950" data-y="-1550" data-z="-2000" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Physical Layer Signaling II</div>
+							<ol class="columnframe columnlist" style="counter-reset:li 2;">
+								<li class="twocolwidth">
+									<strong> Network Traffic Combining</strong>
+									<img class="fillwidth" src="img/redeNC.svg" alt="This is private information!"/>
+									<p class="figcaption"> Network Coding Cooperation</p>
+								</li>
+								<li class="twocolwidth">
+									<strong> MIMO Combining</strong>
+									<img class="fillwidth" src="img/randomSTCtrans.svg" alt="This is private information!"/>
+									<p class="figcaption"> Space-Time Code Cooperation</p>
+								</li>
+							</ol>
+						</div>
+
+						<div id="MAC" class="step slide" data-x="-0950" data-y="-1550" data-z="-2750" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">MAC Layer Functions</div>
+							<h3 class="contrib">Contribution C1.1.3: Cooperative MAC Functional Model</h3>
+							<div class="columnframe">
+								<img class="singlecolumn" src="img/MACoverview.svg" alt="This is private information!"/>
+								<p class="figcaption"> Functions of MAC Layer</p>
+							</div>
+						</div>
+
+						<div id="MAC2" class="step slide" data-x="-0950" data-y="-1550" data-z="-3500" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">MAC Layer Functions II</div>
+							<h3 class="contrib">Contribution C1.1.4: MAC Survey &amp; Classification</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Neighbor Mapping</strong>
+									<ol>
+										<li>Possible mapped information
+											<ol>
+												<li>Neighbor ID</li>
+												<li>Location</li>
+												<li>Willingness</li>
+												<li>etc...</li>
+											</ol>
+										</li>
+										<li>Acquisition procedure
+											<ol>
+												<li>Passive or active</li>
+												<li>Medium (messages, tones...)</li>
+											</ol>
+										</li>
+										<li>Reliability
+											<ol>
+												<li>Update Regularity</li>
+												<li>Confirmation</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<strong>Helper Set Design</strong>
+									<ol>
+										<li>Selected helpers from map
+											<ol>
+												<li>One or many</li>
+												<li>Aggregate performance metric</li>
+											</ol>
+										</li>
+										<li>Reliability measures
+											<ol>
+												<li>Default correction</li>
+												<li>ACK requirement</li>
+											</ol>
+										</li>
+										<li>Number of hops
+											<ol>
+												<li>Single group between Source and Destination</li>
+												<li>Multi-group-hop</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div id="MAC3" class="step slide" data-x="-0950" data-y="-1550" data-z="-4250" data-rotate-x="-90" data-rotate-y="-180">
+							<div class="slidetitle">MAC Layer Functions III</div>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Cooperation Analysis and Decision</strong>
+									<ol>
+										<li>Compare direct and cooperative transmission
+											<ol>
+												<li>Performance</li>
+												<li>Cost</li>
+											</ol>
+										</li>
+										<li>Time of decision
+											<ol>
+												<li>Proactive: Evaluate before transmission</li>
+												<li>Reactive: Cooperate if direct fails</li>
+											</ol>
+										</li>
+										<li>Expected-obtained result accuracy
+											<ol>
+												<li>Channels change</li>
+												<li>Helpers come and go</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<strong>Cooperator Notification and Agreement</strong>
+									<ol>
+										<li>Contact helpers and agree parameters
+											<ol>
+												<li>Initialization values</li>
+												<li>Measure and exchange CSI</li>
+											</ol>
+										</li>
+										<li>Responsability of decision
+											<ol>
+												<li>Source</li>
+												<li>Relay</li>
+												<li>Destination</li>
+												<li>By parts</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div id="MAC4" class="step slide" data-x="-0950" data-y="-1550" data-z="-5000" data-rotate-x="-90" data-rotate-y="-180">
+							<div class="slidetitle">MAC Layer Functions IV</div>
+							<div class="columnframe">
+								<strong class="singlecolumn">Cooperative Transmission Design</strong>
+								<ol id="centerlistfix" class="singlecolumn">
+									<li>Selected helpers from Map
+										<ol>
+											<li>One or many</li>
+											<li>Aggregate performance metric</li>
+										</ol>
+									</li>
+									<li>Reliability measures
+										<ol>
+											<li>Default correction</li>
+											<li>ACK requirement</li>
+										</ol>
+									</li>
+									<li>Number of Hops
+										<ol>
+											<li>Single group between source and destination</li>
+											<li>Multi-group-hop</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+						</div>
+
+						<div id="overview2" class="step glass" data-x="-0150" data-y="-1400"  data-scale="4">
+						</div>
+						<div id="theme2" class="step slide appearify persist" data-x="-0950" data-y="-0600" data-z="+50">
+							<div class="slidetitle">Part 1 :: Practical Aspects</div>
+							<h2>Current Cooperative Communications</h2>
+							<h1>Practical Multi-hop Relaying in LTE-A</h1>
+							<ol>
+								<li class="doublebreak">SINR model vs System Level Simulation</li>
+								<li class="doublebreak">Interference discussion</li>
+								<li class="doublebreak">Scheduling analysis</li>
+								<li class="doublebreak">Relay admission</li>
+							</ol>
+						</div>
+
+						<div id="SIM" class="step slide" data-x="-0950" data-y="-0600" data-z="-0500" data-rotate-x="-90">
+							<div class="slidetitle">SINR model vs System Level Simulation</div>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<img class="fillwidth" src="img/LTE_relay_setup.svg" alt="This is private information!"/>
+									<strong>Literature:</strong>
+									<ol>
+										<li>Single-user two hop link</li>
+										<li>Time division factor $\alpha$</li>
+										<li>SINR-based rate calculations
+											<ol>
+												<li>First link $\alpha R_1$</li>
+												<li>Second link $(1-\alpha) R_2$</li>
+											</ol>
+										</li>
+										<li>Optimal division <strong>per link</strong>: balanced
+											$$\alpha^*=\frac{R_2}{R_1+R_2}\;R^*=\frac{R_1R_2}{R_1+R_2}.$$
+										</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<img class="fillwidth" src="img/LTE_relay_subframe.svg" alt="This is private information!"/>
+									<strong>Standard:</strong>
+									<ol>
+										<li>MAC allocates RBs
+											<ol>
+												<li>Among many users</li>
+												<li>In 10 static subframes</li>
+											</ol>
+										</li>
+										<li>Rate affected by
+											<ol>
+												<li>SINR</li>
+												<li>RB allocation</li>
+												<li>Traffic arrivals</li>
+											</ol>
+										</li>
+										<li>Exclusive eNB-RN subframes
+											<ol>
+												<li>Forced <strong>global</strong> $\alpha$</li>
+												<li>Suboptimal division</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div id="SIM2" class="step slide" data-x="-0950" data-y="-0600" data-z="-1250" data-rotate-x="-90">
+							<div class="slidetitle">System Level Simulation: Tools</div>
+							<div class="columnframe">
+								<img  class="singlecolumn" src="img/arch.svg" alt="This is private information!"/>
+								<p class="figcaption">Viena LTE System Level Simulator</p>
+								<ol id="centerlistfix" class="singlecolumn">
+									<li>3GPP Pathloss models for macro and femto cells</li>
+									<li>Radio Resource Control discrete simulation</li>
+									<li>Traffic generation, queuing and delivery mechanisms</li>
+								</ol>
+							</div>
+						</div>
+
+						<div id="SIM3" class="step slide" data-x="-0950" data-y="-0600" data-z="-2000" data-rotate-x="-90">
+							<div class="slidetitle">System Level Simulation: Implementation</div>
+							<h3 class="contrib">Contribution C1.2.5: Relay Simulation Extension</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<img class="fillwidth" src="img/RNdesign.svg" alt="This is private information!"/>
+									<p class="figcaption">Relay Model</p>
+								</div>
+								<div class="twocolwidth">
+									<ol>
+										<li><strong>Cost-effective scenario implementation</strong></li>
+										<li>Reuse simulator components</li>
+										<li>Plug-in scheduler API</li>
+										<li>Static RN frames enforcement</li>
+										<li>Realistic traffic forwarding</li>
+									</ol>
+								</div>
+							</div>
+							<button class="openDialog" href="#RNdesignDialog">See implementation</button>
+							<div id="RNdesignDialog" class="infoDialog" title="RN Simulation Architecture Details">
+								<img class="fillwidth" src="img/arch_relay.svg" alt="This is private information!"/>
+							</div>
+						</div>
+
+						<div id="INT" class="step slide" data-x="-0950" data-y="-0600" data-z="-2750" data-rotate-x="-90">
+							<div class="slidetitle">Interference Discussion: Interference Increase in Vain</div>
+							<h3 class="contrib">Contribution C1.2.6: Discussion of Interference and Mitigation</h3>
+							<ol class="columnframe columnlist">
+								<li class="twocolwidth">
+									Unbalanced links
+									<ol>
+										<li class="doublebreak">Too many RN ransmissions</li>
+										<li class="doublebreak">No actual data delivery</li>
+										<li class="doublebreak">Increase interference </strong>but not rates</strong></li>
+									</ol>
+								</li>
+								<li class="twocolwidth">
+									Scenario with 6 DL subframes
+									<ol>
+										<li class="doublebreak"> 1 eNB-RN active subframe ($\alpha=1/7$)</li>
+										<li class="doublebreak"> Default behavior: 5 RN-UE subframes</li>
+										<li class="doublebreak"> Fix: add 3 blank subframes</li>
+									</ol>
+								</li>
+							</ol>
+
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<button class="openDialog" href="#CQI56SubframesDialog">Default Behavior</button>
+								</div>
+								<div class="twocolwidth">
+									<button class="openDialog" href="#CQI26SubframesDialog">Corrected Behavior</button>
+								</div>
+							</div>
+
+							<div id="CQI56SubframesDialog" class="infoDialog" title="Simulation with 5/6 RN subframes">
+								<img class="fillwidth" src="img/CQI-65v11.svg" alt="This is private information!"/>
+								<p class="figcaption">Default Behavior</p>
+							</div>
+							<div id="CQI26SubframesDialog" class="infoDialog" title="Simulation with 1/6 RN subframes">
+								<img class="fillwidth" src="img/CQI-62v11.svg" alt="This is private information!"/>
+								<p class="figcaption">With blank RN subframes</p>
+							</div>
+						</div>
+
+						<div id="SCH" class="step slide" data-x="-0950" data-y="-0600" data-z="-3500" data-rotate-x="-90">
+							<div class="slidetitle">Scheduler Analysis I</div>
+							<h3 class="contrib">Contribution C1.2.7: Analysis of Proportional Fair Scheduling</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Scheduling: </strong>
+									<ol>
+										<li>RB allocation to users in each subframe</li>
+										<li>Algorithms:
+											<ol>
+												<li>Round Robin</li>
+												<li>Max Throughput</li>
+												<li>Proportional Fair</li>
+												<li>...</li>
+											</ol>
+										</li>
+									</ol>
+									<strong>Observation: </strong>
+									<ol>
+										<li>RNs generate rate gain with RR, but not with PF</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<strong>Explanation:</strong> RNs force connections out of ideal PF slots
+									<img class="fillwidth" src="img/schedulerproblem.svg" alt="This is private information!"/>
+									<strong>Static Relaying vs PF Scheduling</strong>
+								</div>
+							</div>
+						</div>
+
+						<div id="SCH2" class="step slide" data-x="-0950" data-y="-0600" data-z="-4250" data-rotate-x="-90">
+							<div class="slidetitle">Scheduler Analysis II</div>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<h3>Theoretical Analysis:</h3>
+									PF permanent regime $\equiv$ Stability of ODE system
+									$$
+									\begin{split}
+									0=&\frac{1}{\lambda_1}-\frac{\lambda_1\overline{\theta}_1^2}{\left( \lambda_1\overline{\theta}_1+\lambda_2\overline{\theta}_2\right)^2}-\overline{\theta}_1\\
+									0=&\frac{1}{\lambda_2}-\frac{\lambda_2\overline{\theta}_2^2}{\left( \lambda_1\overline{\theta}_1+\lambda_2\overline{\theta}_2\right)^2}-\overline{\theta}_2\\
+									\end{split}
+									$$
+								</div>
+								<div class="twocolwidth">
+									<strong>Extension to RNs: </strong>
+									<ol>
+										<li>Two types of connections
+											<ol>
+												<li>$n_\mathrm{d}$ direct users</li>
+												<li>$n_\mathrm{r}$ relay users</li>
+											</ol>
+										</li>
+										<li>Two types of frames:
+											<ol>
+												<li>$\alpha$ all connections allowed</li>
+												<li>$1-\alpha$ only direct connections</li>
+											</ol>
+										</li>
+									</ol>
+									<strong>Result: approx. time-sharing</strong>
+									<ol>
+										<li>$\alpha\times$ rate of a $n_\mathrm{d}+n_\mathrm{r}$-user PF scheduler</li>
+										<li>+$(1-\alpha)\times$ rate of a $n_\mathrm{d}$-user PF scheduler</li>
+									</ol>
+								</div>
+							</div>
+							<button class="openDialog" href="#schedRNDialog">See analysis</button>
+							<div id="schedRNDialog" class="infoDialog" title="RN Simulation Architecture Details">
+								$$
+								\begin{array}{cccc}
+								0=\color{#005682}{\alpha\left[\frac{1}{\lambda_{1,r}}-\frac{\lambda_{1,r}\overline{\theta}_1^2}{\left(\lambda_{1,r}\overline{\theta}_1+\lambda_{2,r}\beta\overline{\theta}_2\right)^2}\right]}
+								+\color{#008141}{(1-\alpha)\left[\frac{1}{\lambda_{1,a}}-\overline{\theta}_1\right]}-\overline{\theta}_1\\
+								0=\color{#005682}{\alpha\left[\frac{1}{\lambda_{2,r}}-\frac{(\overline{\theta}_2\beta)^2\lambda_{2,r}}{\left( \lambda_{1,r}\overline{\theta}_1+\lambda_{2,r}\beta\overline{\theta}_2\right)^2}\right]}-\overline{\theta}_2\\
+								\end{array}
+								$$
+								<ol>
+									<li><span style="color:#005683;">$\alpha\times$ rate of a $n_\mathrm{d}+n_\mathrm{r}$-user PF scheduler (in all users)</span></li>
+									<li><span style="color:#008141;">$(1-\alpha)\times$ rate of a $n_\mathrm{d}$-user PF scheduler (in direct users only)</span></li>
+								</ol>
+							</div>
+						</div>
+
+						<div id="SCH3" class="step slide" data-x="-0950" data-y="-0600" data-z="-5000" data-rotate-x="-90">
+							<div class="slidetitle">Scheduler Analysis III</div>
+							<h3 class="contrib">Contribution C1.2.8: Scheduling Parameters Trade-offs</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Incentive parameter $\beta>1$</strong>
+									<img class="fillwidth" src="img/dependencybeta.svg" alt="This is private information!"/>
+									<ol>
+										<li>Proposed in literature for link balancing</li>
+										<li>Bias to RN selection</li>
+										<li>Degrades multi-user diversity</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<strong>Similar analises conclude that</strong>
+									<ol>
+										<li>Interference $\frac{\lambda_{\mathrm{d}}^{(2)}}{\lambda_\mathrm{d}}$ makes direct users worse</li>
+										<li class="doublebreak">Time-split factor $\alpha\to 0$ causes RN starvation</li>
+										<li class="doublebreak">Time-split factor $\alpha\to 1$ causes two-hop link inbalance</li>
+										<li class="doublebreak">Recommendation: increase $\alpha$ and make incentive $\beta&lt;1$ (reverse incentive)</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div id="AC" class="step slide" data-x="-0950" data-y="-0600" data-z="-5750" data-rotate-x="-90">
+							<div class="slidetitle">Admission Control</div>
+							<h3 class="contrib">Contribution C1.2.9: Relay Admission Control Algorithm</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<img class="fillwidth" src="./img/geometric.svg" alt=""/>
+									<p class="figcaption">RN service area border</p>
+								</div>
+								<div class="twocolwidth">
+									<ol>
+										<li>Area served by a RN
+											<ol>
+												<li>Small</li>
+												<li>Approx. circular</li>
+											</ol>
+										</li>
+										<li class="doublebreak">Estimate service distance
+											<ol>
+												<li>Use approximate 3GPP pathloss for eNB-RN, eNB-UE and RN-UE</li>
+												<li>Find the point that satisfies $r=r_r$</li>
+												<li>Such that end-to-end rates are equal</li>
+												<li>Compute radius of circumference $d_{r=r_r}$</li>
+											</ol>
+										</li>
+										<li class="doublebreak">Reject RNs with small or overlapping $d_{r=r_r}$</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+
+						<div id="overview3" class="step glass" data-x="-0150" data-y="-1400"  data-scale="4"></div>
+						<div id="theme3" class="step slide appearify persist" data-x="0000" data-y="-1550" data-z="+50">
+							<div class="slidetitle">Part 2 :: Theoretical Aspects</div>
+							<h2>Analysis of Cooperative Diversity in</h2>
+							<h1>Cognitive Radio Spectrum Leasing</h1>
+							<ol>
+								<li class="doublebreak">A model of Social Gain</li>
+								<li class="doublebreak">Characterization of Mutual Information</li>
+								<li class="doublebreak">Ergodic gain with long-term static decision</li>
+								<li class="doublebreak">Distribution of gain with short-term dynamic decisions</li>
+							</ol>
+						</div>
+
+						<div id="MOD" class="step slide" data-x="0000" data-y="-1550" data-z="-0500" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Cognitive Cooperative Model</div>
+							<strong>Cooperative Spectrum Leasing:</strong> a <span style="color:#005682;">primary spectrum licensee...</span>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<p>...inefficient alone,...</p>
+									<img class="fillwidth" src="img/CSLprinciples_before.svg" alt="This is private information!"/>
+								</div>
+								<div class="twocolwidth">
+									<p> ...improved with cooperation,...</p>
+									<img class="fillwidth" src="img/CSLprinciples_after.svg" alt="This is private information!"/>
+								</div>
+							</div>
+							... and releases <span style="color:#008141;">part of its bandwidth to the secondary</span> in return.
+						</div>
+
+
+						<div id="GAIN" class="step slide" data-x="0000" data-y="-1550" data-z="-1250" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Social Gain Quantification</div>
+							<img class="fillwidth" src="img/coopCoexAlph_0.svg" alt="This is private information!"/>
+							<p class="figcaption">Resource (time) division scheme. <strong>$\alpha$:</strong> fraction of resources released</p>
+							<h3 class="contrib">Contribution C1.3.1: Metric for Social Utility</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Literature</strong>
+									<ol>
+										<li>$\alpha=\arg \max \sum_i \mathcal{U}(R_i)$</li>
+										<li><em>Individual</em> spectrum gain</li>
+										<li>Game-theoretic &amp; competitive</li>
+									</ol>
+									<strong>Who gets how much?</strong>
+								</div>
+								<div class="twocolwidth">
+									<strong>Our model</strong>
+									<ol>
+										<li>$\alpha_\max:=\alpha \diagup R_{coop}=R_{direct}$</li>
+										<li><em>Social</em> spectrum gain</li>
+										<li>Evaluate value of cooperation</li>
+									</ol>
+									<strong>Should we make CR like this?</strong>
+								</div>
+							</div>
+						</div>
+
+						<div id="GAIN2" class="step slide" data-x="0000" data-y="-1550" data-z="-2000" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Probability of Gain</div>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Direct transmission</strong>
+									$$
+									I_{\mathrm{D}}=\log_2(1+|h_{\mathrm{sd}}|^2\mathrm{SNR})
+									$$
+								</div>
+								<div class="twocolwidth">
+									<strong>Decode and Forward</strong>
+									$$
+									I_{\mathrm{DF}}=\min\begin{array}{c}
+									\log_2(1+|h_{\mathrm{sd}}|^2+|h_{\mathrm{rd}}|^2\mathrm{SNR})\\
+									\log_2(1+|h_{\mathrm{sr}}|^2\mathrm{SNR})
+									\end{array}
+									$$
+								</div>
+								<h3 class="contrib">Contribution C1.3.2: Probability of Gain</h3>
+								<img class="singlecolumn" src="img/benefProbS.svg" alt="This is private information!"/>
+							</div>
+						</div>
+						<div id="INF" class="step slide" data-x="0000" data-y="-1550" data-z="-2750" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Mutual Information Distribution</div>
+							<ol>
+								<li style="font-size: 75%;">$f_{I_{\mathrm{D}}}(i_{\mathrm{D}})=\frac{\ln(2)}{\mathrm{SNR}}2^{i_{_\mathrm{D}}}e^{-\lambda_{\mathrm{sd}}\frac{2^{i_{_\mathrm{D}}}-1}{\mathrm{SNR}}}$</li>
+								<li style="font-size: 75%;">$f_{I_{\mathrm{DF}}}(x)=\begin{cases}\frac{\ln(2)}{\mathrm{SNR}}2^{i_{_\mathrm{DF}}}
+									\left(1+(\lambda_{\mathrm{sd}}^2+\lambda_{\mathrm{sd}}\lambda_{\mathrm{sr}})\frac{2^{i_{_\mathrm{DF}}}-1}{\mathrm{SNR}}\right)e^{-(\lambda_{\mathrm{sd}}+\lambda_{\mathrm{sr}})\frac{2^{i_{_\mathrm{DF}}}-1}{\mathrm{SNR}}}
+									\lambda_{\mathrm{sd}}=\lambda_{\mathrm{rd}}\\
+									%
+									\frac{\ln(2)}{\mathrm{SNR}}2^{i_{_\mathrm{DF}}}
+									\frac{
+										\left[
+										(\lambda_{\mathrm{sd}}\lambda_{\mathrm{rd}}-\lambda_{\mathrm{sd}}\lambda_{\mathrm{sr}})e^{-(\lambda_{\mathrm{rd}}+\lambda_{\mathrm{sr}})\frac{2^{i_{_\mathrm{DF}}}-1}{\mathrm{SNR}}}
+										+(\lambda_{\mathrm{rd}}\lambda_{\mathrm{sr}}-\lambda_{\mathrm{sd}}\lambda_{\mathrm{rd}})e^{-(\lambda_{\mathrm{sd}}+\lambda_{\mathrm{sr}})\frac{2^{i_{_\mathrm{DF}}}-1}{\mathrm{SNR}}}
+										\right]
+									}{
+										\lambda_{\mathrm{rd}}
+										-\lambda_{\mathrm{sd}}
+									} \lambda_{\mathrm{sd}}\neq\lambda_{\mathrm{rd}}\\
+									\end{cases}
+									$
+								</li>
+							</ol>
+							<h3 class="contrib">Contribution C1.3.3: M.I. p.d.f.'s</h3>
+							<img class="singlecolumn" src="img/infMutComparisson_1.svg" alt="This is private information!"/>
+						</div>
+
+						<div id="STA" class="step slide" data-x="0000" data-y="-1550" data-z="-3500" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Static Decision-Making</div>
+							<h3 class="contrib">Contribution C1.3.4: Average gain with statistic CSI</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<ol>
+										<li><strong>Only statistics of the channel available</strong></li>
+										<li class="doublebreak">Definition of leasing limit
+											$$\tilde{\alpha}_{_{\max}}=\max\left(0,1-\frac{E\left[I_{\mathrm{D}}\right]}{E\left[I_{\mathrm{DF}}\right]}\right)$$
+										</li>
+										<li class="doublebreak">Static decission-making: select $\alpha\in[0,\tilde{\alpha}_{_{\max}}]$ once for all realizations</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<img class="fillwidth" src="img/avgMutInf_3.svg" alt="This is private information!"/>
+								</div>
+							</div>
+						</div>
+						<div id="DYN" class="step slide" data-x="0000" data-y="-1550" data-z="-4250" data-rotate-x="-90"  data-rotate-y="-180">
+							<div class="slidetitle">Dynamic Decision-Making</div>
+							<h3 class="contrib">Contribution C1.3.5: Distribution of dynamic gain with instantaneous CSI</h3>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<ol>
+										<li><strong>Full CSI available</strong></li>
+										<li class="doublebreak">Definition of leasing limit
+											$$\alpha_{_{\max}}=\max(0,1-\frac{I_{\mathrm{D}}}{I_{\mathrm{C}}})$$
+										</li>
+										<li class="doublebreak">Dynamic decission-making: select $\alpha\in[0,\tilde{\alpha}_{_{\max}}]$ for each realization</li>
+									</ol>
+								</div>
+								<div class="twocolwidth">
+									<p class="tabletitle">Leasing fraction dynamic vs static</p>
+									<table class="fillwidth">
+										<thead>
+											<tr>
+												<td class="head">$\sigma_{\mathrm{sd}}$ </td><td class="head"> $\mathrm{SNR}$ </td><td> $E\left[\alpha_{_{\max}}\right]$ </td><td> $\tilde{\alpha}_{_{\max}}$</td>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td rowspan=2 class="head">$1$ </td><td class="head"> $0dB$ </td><td> $8.7\%$ </td><td> $0\%$</td>
+											</tr><tr>
+												<td class="head"> $30dB$ </td><td> $0.3\%$ </td><td> $0\%$</td>
+											</tr><tr>
+												<td rowspan=2 class="head">$0.5$ </td><td class="head"> $0dB$ </td><td> $27.0\%$ </td><td> $0\%$</td>
+											</tr><tr>
+												<td class="head"> $30dB$ </td><td> $1.4\%$ </td><td> $0\%$</td>
+											</tr><tr>
+												<td rowspan=2 class="head">$0.25$ </td><td class="head"> $0dB$ </td><td> $57.5\%$ </td><td> $64.3\%$</td>
+											</tr><tr>
+												<td class="head"> $30dB$ </td><td> $5.2\%$ </td><td> $0\%$</td>
+											</tr><tr>
+												<td rowspan=2 class="head">$0.1$	 </td><td class="head"> $0dB$ </td><td> $93.1\%$ </td><td> $93.4\%$</td>
+											</tr><tr>
+												<td class="head"> $30dB$ </td><td> $24.0\%$ </td><td> $18.6\%$</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						<div id="overview4" class="step glass" data-x="-0150" data-y="-1400"  data-scale="4"></div>
+						<div id="theme4" class="step slide appearify persist" data-x="0000" data-y="-0600" data-z="+50">
+							<div class="slidetitle">Part 2 :: Practical Aspects</div>
+							<h2>Practical Cooperative Spectrum Leasing:</h2>
+							<h1>Third-Party Relaying in M2M LTE-A</h1>
+							<ol>
+								<li class="doublebreak">Third party RN operation in LTE-A</li>
+								<li class="doublebreak">Gain with a single relay</li>
+								<li class="doublebreak">Gain with massive relaying</li>
+								<li class="doublebreak">Case studies of interest</li>
+							</ol>
+						</div>
+
+						<div id="3PT" class="step slide" data-x="0000" data-y="-0600" data-z="-0500" data-rotate-x="-90">
+							<div class="slidetitle">Third Party RN CSL Model</div>
+							<div class="columnframe">
+								<div class="twocolwidth">
+									<strong>Future LTE-A link rate</strong>
+									<ol>
+										<li class="doublebreak">Theoretical models from literature</li>
+										<!--<li>Path loss $$PL=PL_0+10\alpha\log_{10}(d)$$</li>
+										<li>Link budget SNR$=$ $$P_\mathrm{t}+G_\mathrm{t}+G_\mathrm{r}-PL-10\log_{10}(BN_0)$$</li>
+										<li>Spectral efficiency of link x
+										$$\rho_{x}=\alpha_1 \log_2(1+\mathrm{SNR}_x\alpha_2)$$
+									</li>-->
+									<li class="doublebreak">Spectral efficiency $\rho_x$</li>
+									<li class="doublebreak">Assigned RBs $n_x$</li>
+									<li class="doublebreak">Throughput $T_x=\rho_{x}n_x$</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<ol>
+									<li>Primary DeNB-UE link allocated $n_\mathrm{d}$ RBs</li>
+									<li class="doublebreak">UE direct connection $\rho_\mathrm{d}$</li>
+									<li class="doublebreak">Cognitive RN offers $\rho_{\mathrm{e2e}}$</li>
+									<li class="doublebreak">DeNB decision
+										<ol>
+											<li>Spectral efficiency gain $\Delta \rho=\max(\rho_{\mathrm{e2e}}-\rho_\mathrm{d},0)$</li>
+											<li>Allocate $n_{\mathrm{e2e}}$ such that
+												$$n_{\mathrm{e2e}}\rho_{\mathrm{e2e}}=T_{\mathrm{d}}=n_{\mathrm{d}}\rho_{\mathrm{d}}$$
+											</li>
+											<li>RB gain $\Delta n=\max(n_\mathrm{d}-n_{\mathrm{e2e}},0)$
+											</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="1RN" class="step slide" data-x="0000" data-y="-0600" data-z="-1250" data-rotate-x="-90">
+						<div class="slidetitle">Gain of a Single RN</div>
+						<h3 class="contrib">Contribution C1.4.6: Model and gain of a single RN</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<div class="fillwidth">
+									<div class="twocolwidth">
+										<img class="fillwidth" src="img/RELmodcodprop_12-r2.svg" alt="This is private information!"/>
+										<p class="figcaption">$r_r=2.4$Km</p>
+									</div>
+									<div class="twocolwidth">
+										<img class="fillwidth" src="img/RELmodcodprop_12-r4.svg" alt="This is private information!"/>
+										<p class="figcaption">$r_r=4.0$Km</p>
+									</div>
+								</div>
+								<div class="fillwidth">
+									<div class="twocolwidth">
+										<img class="fillwidth" src="img/RELmodcodprop_12-r6.svg" alt="This is private information!"/>
+										<p class="figcaption">$r_r=5.6$Km</p>
+									</div>
+									<div class="twocolwidth">
+										<img class="fillwidth" src="img/RELmodcodprop_12-r7.svg" alt="This is private information!"/>
+										<p class="figcaption">$r_r=7.2$Km</p>
+									</div>
+								</div>
+								<p class="figcaption">$\Delta \rho$ versus RN distance</p>
+							</div>
+							<div class="twocolwidth">
+								<img class="fillwidth" src="img/averageRBG_thesispresentation.svg" alt="This is private information!"/>
+								<p class="figcaption">$\Delta n$ versus RN distance</p>
+								<ol>
+									<li> Very small RB gain <br/>$E\left[\Delta n\right]$ ($\Theta(0.1)$% RBs)</li>
+									<li> Coverage area very small too</li>
+								</li>
+							</div>
+						</div>
+					</div>
+
+					<div id="NRN" class="step slide" data-x="0000" data-y="-0600" data-z="-2000" data-rotate-x="-90">
+						<div class="slidetitle">Gain with Massive RNs</div>
+						<h3 class="contrib">Contribution C1.4.7: Model and gain with massive RNs</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<img class="fillwidth" src="img/SE300RelaysGreedy_PL1.svg" alt="This is private information!"/>
+								<p class="figcaption">Relay Admission Control</p>
+							</div>
+							<div class="twocolwidth">
+								<img class="fillwidth" src="img/GreedyRelays_thesispresentation.svg" alt="This is private information!"/>
+								<p class="figcaption">$\Delta n$ versus no. of RNs</p>
+								<ol>
+									<li> More than 100 RNs accepted (when no. candidates $>$300)</li>
+									<li> Aggregated RB gain $E\left[\Delta n\right]$ $\Theta(20)$% RBs</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="EXP" class="step slide" data-x="0000" data-y="-0600" data-z="-2750" data-rotate-x="-90">
+						<div class="slidetitle">Case Studies of Interest</div>
+						<h3 class="contrib">Contribution C1.4.8: New Application Examples and Rates</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<strong>Example 1: Smart Grid Last Mile Neighborhood Area Network</strong>
+								<ol>
+									<li>3rd party RN: domestic smart meter</li>
+									<li>DeNB location: Energy distribution AP</li>
+									<li>$$
+										\rho_{\mathrm{NAN}}=\sum_{r\in\mathcal{RN}}\rho_{\mathrm{r}}\times\mathrm{E}\left[\frac{\Delta n}{n_d}\right]
+										$$
+									</li>
+									<li>$\sim5$Mbps (0.25bps/Hz, 20MHz)</li>
+									<li> More than enough for SG</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<strong>Example 2: Machine-to-Machine Local Area Network</strong>
+								<ol>
+									<li>3rd party RN: LAN hub</li>
+									<li>RN small cell: M2M network</li>
+									<li class="doublebreak"><span  style="font-size:16px;">$$
+										\rho_{\mathrm{LAN}}=\frac{\sum_{u\in\mathcal{U}(r)}\mathrm{E}\left[\rho_{\mathcal{a}}\right]}{|\mathcal{U}(r)|}\times\mathrm{E}\left[\frac{\Delta n}{n_d}\right]
+										$$</span>
+									</li>
+									<li class="doublebreak">$\sim10$Mbps (0.5bps/Hz, 20MHz)</li>
+									<li> Much higher than typical M2M (e.g. ZigBee 250Kbps)</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="overview5" class="step glass" data-x="-0150" data-y="-1400"  data-scale="4"></div>
+					<div id="theme5" class="step slide appearify persist" data-x="950" data-y="-1550" data-z="+50">
+						<div class="slidetitle">Part 3 :: Theoretical Aspects</div>
+						<h2>Cooperative Multi-hop Achieves</h2>
+						<h1>The Capacity Scaling of Future Cellular Networks</h1>
+						<ol>
+							<li class="doublebreak">Scaling Laws model</li>
+							<li class="doublebreak">Capacity scaling laws</li>
+							<li class="doublebreak">Scaling laws for practical protocols</li>
+							<li class="doublebreak">The importance of a good traffic model</li>
+						</ol>
+					</div>
+
+					<div id="C5G" class="step slide" data-x="950" data-y="-1550" data-z="-0500" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Drastic Changes between 4G and 5G</div>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<strong>4G Cellular</strong>
+								<ol>
+									<li>$\mu$Wave
+										<ol>
+											<li>$\leq 5$GHz</li>
+											<li>Scarce bandwidth</li>
+											<li>Better propagation</li>
+										</ol>
+									</li>
+									<li>$1-4$ antennas
+										<ol>
+											<li>All-digital MIMO</li>
+											<li>Wide-beam or omnidirectional</li>
+											<li>Needs interference cancelling</li>
+										</ol>
+									</li>
+									<li>Range $\geq500$m
+										<ol>
+											<li>Lower AP density</li>
+											<li>Direct link to all users</li>
+										</ol>
+									</li>
+									<li>Wall penetration
+										<ol>
+											<li>Radial cell shape</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<strong>5G Cellular</strong>
+								<ol>
+									<li>mmWave
+										<ol>
+											<li>$5-500$GHz</li>
+											<li>Abundant bandwidth</li>
+											<li>Worse propagation</li>
+										</ol>
+									</li>
+									<li>10s, 100s antennas
+										<ol>
+											<li>Hybrid analog-digital MIMO</li>
+											<li>Narrow directional beams</li>
+											<li>Most interference directions negligible</li>
+										</ol>
+									</li>
+									<li>Range $\leq200$m
+										<ol>
+											<li>Higher AP density</li>
+											<li>Multi-hop backhauling
+											</li>
+										</ol>
+									</li>
+									<li>Wall reflection
+										<ol>
+											<li>Building-defined cell shape</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+					<div id="SCA" class="step slide" data-x="950" data-y="-1550" data-z="-1250" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Scaling Laws Model</div>
+						<h3>Random Cellular Network Scaling</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<img class="fillwidth" src="img/model.svg" alt="This is private information!"/>
+								<p class="figcaption">BS Cell with scaling dimensions</p>
+							</div>
+							<div class="twocolwidth">
+								<table class="fillwidth">
+									<thead>
+										<tr><td class="head">Quantity</td>	<td> Scaling with $n$</td> <td>Exponent range</td></tr>
+									</thead>
+									<tbody>
+										<tr><td class="head">Area </td>										<td> $A=A_0 n^{\nu}$</td> 					<td>$[0,1]$</td></tr>
+										<tr><td class="head">No. of BS </td>							<td> $m=m_0 n^{\beta}$</td> 				<td>$[0,1]$</td></tr>
+										<tr><td class="head">No. of BS antennas </td>			<td> $\ell=\ell_0 n^{\gamma}$</td> 	<td>$[0,1-\beta]$</td></tr>
+										<tr><td class="head">Bandwidth </td>							<td> $W=W_0 n^{\psi}$</td> 					<td>$[0,\infty]$</td></tr>
+										<tr><td class="head">No. of fixed RNs </td>				<td> $k=k_0 n^{\rho}$</td> 					<td>$[\beta,1]$</td></tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<div id="SCA2" class="step slide" data-x="950" data-y="-1550" data-z="-2000" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Scaling Laws Model</div>
+						<h3>Characterization of Capacity Region</h3>
+						<p class="definition">DL/UL throughput $R(n)$ is <em>feasible</em> if the BSs can transmit to/receive from all nodes $R(n)$ bps at the same time</p>
+						<p class="definition">The <em>throughput capacity scaling</em> of a network is $\Theta(n^{x})$ iff
+							$$\exists c_1&lt; c_2\diagup \begin{array}{c}
+							{\displaystyle \lim_{n\to\infty}}P\left(R(n)=c_1n^{x} \textrm{ is feasible}\right)=1\\
+							{\displaystyle \lim_{n\to\infty}}P\left(R(n)=c_2n^{x} \textrm{ is feasible}\right)&lt;1\\
+							\end{array}$$
+						</p>
+					</div>
+
+
+					<div id="PRO" class="step slide" data-x="950" data-y="-1550" data-z="-2750" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Protocol Models</div>
+						<h3>Multi-hop Protocols</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<img class="fillwidth" src="img/model3.svg" alt="This is private information!"/>
+								<p class="figcaption">Infrastructure Multi-Hop</p>
+							</div>
+							<div class="twocolwidth">
+								<img class="fillwidth" src="img/modelIRH.svg" alt="This is private information!"/>
+								<p class="figcaption">Infrastructure Relay-multi-Hop</p>
+							</div>
+						</div>
+					</div>
+					<div id="PRO2" class="step slide" data-x="950" data-y="-1550" data-z="-3500" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Protocol Models</div>
+						<h3>Infrastructure Hierarchical Cooperation Protocol</h3>
+						<ol>
+							<li>
+						<div class="columnframe">
+							<div class="threecolwidth">
+								<img class="fillwidth" src="img/IHCprotocol1.svg" alt="This is private information!"/>
+								<p class="figcaption">Phase I: BS subcell</p>
+							</div>
+
+							<div class="threecolwidth">
+								<img class="fillwidth" src="img/IHCprotocol2.svg" alt="This is private information!"/>
+								<p class="figcaption">Phase II: Cooperative MIMO</p>
+							</div>
+
+							<div class="threecolwidth">
+								<img class="fillwidth" src="img/IHCprotocol3.svg" alt="This is private information!"/>
+								<p class="figcaption">Phase III: Local subcells</p>
+							</div>
+						</div>
+						</li>
+						<li>Additional layers recursively employed in phases I and III</li>
+					</div>
+
+					<div id="CAP" class="step slide" data-x="950" data-y="-1550" data-z="-4250" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Capacity Scaling Law</div>
+						<h3 class="contrib">Contribution C1.5.1: Throughput Capacity Scaling Laws for Wideband Cellular Networks</h3>
+						<p class="theorem">
+							The rate from the BS to each node is upper bounded by a function with scaling
+							\begin{equation}
+							R_{\mathrm{DL}(n)}\leq \Theta\left(n^{\beta-1+\min\left(\psi+\gamma,(1-\nu)\frac{\alpha}{2}\right)}\right)
+							\end{equation}
+							<!--and the rate from a node to the BS is upper bounded by a function with scaling
+							\begin{equation}
+							R_{\mathrm{UL}(n)}\leq \Theta\left(n^{\min\left(\psi+\beta+\gamma-1,(1-\nu)\frac{\alpha}{2}\right)}\right)
+							\end{equation}
+							with probability $\displaystyle \lim_{n\rightarrow\infty}P\rightarrow1$.-->
+						</p>
+						<p class="theorem">
+							IMH DL feasible rate per node scales as
+							\begin{equation}
+							R_{\mathrm{IMH-DL}}(n)\sim
+							\Theta\left(n^{\beta-1+\min\left(\psi+\gamma,(1-\nu)\frac{\alpha}{2}\right)}\right)
+							\end{equation}
+							<!--and IMH UL feasible rate per node scales as
+							\begin{equation}
+							R_{\mathrm{IMH-UL}}(n)\sim
+							\Theta\left(n^{\Theta(n^{\beta+\gamma-1+\min(\psi,\frac{\alpha}{2}(1-\nu))})}\right)
+							\end{equation}-->
+						</p>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<button class="openDialog" href="#UBproofDialog">UB proof sketch</button>
+								<div id="UBproofDialog" class="infoDialog" title="UB Proof">
+									<img class="singlecolumn" src="img/modelBound.svg" alt="This is private information!"/>
+									<p class="figcaption">Upper bound layout</p>
+									<ol>
+										<li><span style="color:#a10000;">Cut set bound to rate</span></li>
+										<li>All BS and all nodes pool antennas together in a cooperative massive MIMO</li>
+										<li><span style="color:#008141;">Transition-to-power-limited distantce $r_{\mathrm{v}}=\Theta(n^{-(\gamma+\psi)\frac{2}{\alpha}})$</span></li>
+										<li>Three regimes:
+											<ol>
+												<li>$r_{\mathrm{v}}&gt;r_\mathrm{cell}$: all nodes DoF limited</li>
+												<li>$r_\mathrm{cell}&gt;r_{\mathrm{v}}&gt;n^{(1-\nu)\frac{\alpha}{2}}$: all nodes power-limited at $r_\mathrm{v}$</li>
+												<li>$n^{(1-\nu)\frac{\alpha}{2}}&gt;r_{\mathrm{v}}$: all nodes power-limited at $n^{(1-\nu)\frac{\alpha}{2}}$</li>
+											</ol>
+										</li>
+									</ol>
+								</div>
+							</div>
+							<div class="twocolwidth">
+								<button class="openDialog" href="#IMHproofDialog">IMH proof sketch</button>
+								<div id="IMHproofDialog" class="infoDialog" title="IMB Proof">
+									<ol>
+										<li>Each point to point link with
+											<ol>
+												<li>Bandwidth $W_\mathrm{u}(n)$,</li>
+												<li>$\ell_t(n)$ transmission antennas,</li>
+												<li>$\ell_r(n)$ reception antennas</li>
+												<li>$\displaystyle 	\mathrm{SINR}_{u}(n)=\frac{P_\mathrm{u}(n)d(n)^{-\alpha}}{N_\mathrm{I}(n)W_\mathrm{u}(n)}$</li>
+											</ol>
+											scales with $n$ as
+											\begin{equation}
+											R_{\mathrm{u}}(n) =\begin{cases}\Theta\left( W_{\mathrm{u}}(n)\min(\ell_t(n),\ell_r(n))\right)&
+											W_{\mathrm{u}}^*\geq\Theta\left(W_{\mathrm{u}}(n)\right)\\
+											\Theta\left(\ell_r(n)\frac{P_\mathrm{u}(n)d(n)^{-\alpha}}{N_\mathrm{I}(n)} \right)&
+											W_{\mathrm{u}}^*&lt;o(W_{\mathrm{u}}(n))\\
+											\end{cases}
+											\end{equation}
+											where $W_{\mathrm{u}}^*(n):=\frac{\ell_r}{\min(\ell_\mathrm{t},\ell_\mathrm{r})}\frac{P_\mathrm{u}(n)d(n)^{-\alpha}}{N_\mathrm{I}(n)}$
+										</li>
+										<li>The noise+interference PSD $N_{\mathrm{I}}$ scales as
+											\begin{equation}
+											\label{eq:NIDL}
+											N_{\mathrm{I,IMH-DL}}=\Theta\left(n^{\max\left(\frac{\alpha}{2}(1-\nu)-\psi-\gamma,0\right)}\right)
+											\end{equation}
+										</li>
+										<li> When $N_{\mathrm{I}}$ is dominated by interference (first term), all nodes lie (W.H.P.) before a critical distance ($r^*$ such that $W_{\mathrm{u}}^*(n)&lt;W_{\mathrm{u}}$), and vice-versa.
+											<img class="singlecolumn" src="img/model2.svg" alt="This is private information!"/>
+											<p class="figcaption">Critical distance</p>
+										</li>
+									</ol>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="CAP2" class="step slide" data-x="950" data-y="-1550" data-z="-5000" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Capacity Scaling Law</div>
+						<h3 class="contrib">Contribution C1.5.2: Critical Bandwidth Scaling Limit</h3>
+						<h3 class="contrib">Contribution C1.5.3: Only Cooperative Multi-hop Achieves Capacity Scaling in All Regimes</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<img class="big" src="img/epsilonsCapDL.svg" alt="This is private information!"/>
+							</div>
+							<div  class="twocolwidth">
+								<ol>
+									<li>Bandwidth Scaling Exponents</li>
+									<li class="doublebreak">All links DoF limited at small bandwidth</li>
+									<li class="doublebreak">As $W\to\infty$, links become power limited depending on the protocol.
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="CDFM" class="step slide" data-x="950" data-y="-1550" data-z="-5750" data-rotate-x="-90"  data-rotate-y="-180">
+						<div class="slidetitle">Better Traffic Model</div>
+						<h3 class="contrib">Contribution C1.5.4:Data Flow Models Are Critical</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<strong>Ad-hoc traffic</strong>
+								<ol>
+									<li>Random destinations across the whole network</li>
+									<li>Infrastructure use optional</li>
+									<li class="doublebreak">Direct transmission suboptimal</li>
+									<li class="doublebreak">Multi-hop for extense networks</li>
+									<li class="doublebreak">Hierarchical Cooperation for dense networks</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<strong>Cellular traffic model</strong>
+								<ol>
+									<li>Nearest destination, short range</li>
+									<li>Must reach infrastructure</li>
+									<li class="doublebreak">Direct transmission for dense narrowband network</li>
+									<li class="doublebreak">Multi-hop optimal in all networks</li>
+									<li class="doublebreak">Hierarchical cooperation unnecessary</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="overview6" class="step glass" data-x="-0150" data-y="-1400"  data-scale="4"></div>
+					<div id="theme6" class="step slide appearify persist" data-x="950" data-y="-0600" data-z="+50">
+						<div class="slidetitle">Part 3 :: Practical Aspects</div>
+						<h2>Challenges of Cooperative</h2>
+						<h1>Fifth Generation Cellular Networks</h1>
+						<ol>
+							<li  class="doublebreak">Intormation Theoretic Open Questions.
+								<ol>
+									<li>
+										Value of very large bandwidth
+									</li>
+									<li>
+										Multi-user in wideband
+									</li>
+								</ol>
+							</li>
+							<li >Physical layer strategies.
+								<ol>
+									<li>
+										Signaling with a bandwidth limit
+									</li>
+									<li>
+										Massive SIMO to bypass BW limitation
+									</li>
+								</ol>
+							</li>
+							<li >MAC layer algorithms.
+								<ol>
+									<li>
+										Resource Allocation
+									</li>
+									<li>
+										Topology Variations
+									</li>
+								</ol>
+							</li>
+						</ol>
+					</div>
+
+					<div id="WID" class="step slide" data-x="950" data-y="-0600" data-z="-500" data-rotate-x="-90">
+						<div class="slidetitle">Value of Very Large Bandwidth</div>
+						<h3 class="contrib">Contribution C1.6.5: Unified Bandwidth Occupancy Framework for Peaky and Non-peaky Wideband Signals</h3>
+						<strong class="figcaption">Capacity bounds vs BW and $\delta$ in non-coherent channel</strong> (w/ J. Du)
+						<div class="columnframe">
+							<div class="threecolwidth">
+								<img class="fillwidth" src="img/capacityUB3D6e.svg" alt="This is private information!"/>
+							</div>
+							<div class="threecolwidth">
+								<img class="fillwidth" src="img/capacityUBPlane6e.svg" alt="This is private information!"/>
+							</div>
+							<div class="threecolwidth">
+								<ol>
+									<li>Bandwidth $B$</li>
+									<li>Peakyness factor
+										$$P(|x|^2>0)=\delta$$
+									</li>
+									<li>$SNR=\frac{P}{N_0B\delta}$</li>
+									<li>Bandwidth occupancy $B\delta$</li>
+								</ol>
+							</div>
+						</div>
+						Near-linear-in-power at the critical point $(B\delta)^*$
+
+						$$\lim_{B\delta\to(B\delta)^* }\frac{C(B\delta)}{B}=N_{\mathrm{r}}\mathrm{SNR}-\frac{N_{\mathrm{r}}(N_{\mathrm{r}}+N_{\mathrm{t})}}{N_{\mathrm{t}}^2}\mathrm{SNR}^{1+\alpha}+o(B^{-(1+\alpha)})$$
+					</div>
+
+					<div id="MCB" class="step slide" data-x="950" data-y="-0600" data-z="-1250" data-rotate-x="-90">
+						<div class="slidetitle">Multi-user in Wideband</div>
+						<h3 class="contrib">Contribution C1.6.6: Frequency Division Achieves Critical Bandwidth - Analysis of Multiuser Channels</h3>
+						<p class="definition">
+							The <em>multi-user critical bandwidth ($B_{x}^{\mathrm{crit}}$)</em> of a multi-user channel $x$ is the bandwidth above which the rate region does not grow.
+						</p>
+						<strong>Analysis of $N$-user MAC</strong>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<ol>
+									<li>Using FDMA: $N$ Orthogonal point-to-point subchannels</li>
+									<li>$B_{\mathrm{FDMA}}^{\mathrm{crit}}=\sum_{i=1}^{N}B_{i}^{\mathrm{crit}}$</li>
+									<li>$\Sigma R_{\mathrm{FDMA}}^*=\sum_{i=1}^{N}R(B_{i}^{\mathrm{crit}})$</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<ol>
+									<li>Using SIC: Sum-rate limited by a $N\times$ antennas link</li>
+									<li>$B_{\mathrm{SIC}}^{\mathrm{crit}}&lt;B_{\mathrm{SIC}}^{\mathrm{crit}}$</li>
+									<li>$\Sigma R_{\mathrm{SIC}}^* <\sum_{i=1}^{N}R(B_{i}^{\mathrm{crit}})$</li>
+								</ol>
+							</div>
+						</div>
+						<strong>Discussion of BC duality</strong>
+					</div>
+
+					<div id="NPHY" class="step slide" data-x="950" data-y="-0600" data-z="-2000" data-rotate-x="-90">
+						<div class="slidetitle">Signaling with a bandwidth limit</div>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<strong>Coherent receiver on noncoherent channel</strong>
+								<ol>
+									<li >Detect and enforce critical bandwidth limitation</li>
+									<li class="doublebreak">Use reference-assisted channel estimation</li>
+									<li class="doublebreak">Non-ideal rate degradations
+										<ol>
+											<li>Dedicated pilot/data resources</li>
+											<li>Imperfect estimation</li>
+											<li>Time variation</li>
+											<li>Necessity of feedback</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<strong>Noncoherent receivers</strong>
+								<ol>
+									<li >Poor spectral efficiency
+										<ol>
+											<li>On/off signaling</li>
+											<li>Pulse Position Modulation (PPM)</li>
+											<li>Frequency Shift Keying (FSK)</li>
+										</ol>
+									</li>
+									<li class="doublebreak">Multitone-FSK
+										<ol>
+											<li>No. of active tones $Q$</li>
+											<li>Still bandwidth limited</li>
+										</ol>
+									</li>
+									<li class="doublebreak"><em>peaky</em> m-FSK
+										<ol>
+											<li>Duty cycle $\delta$</li>
+											<li>Still bandwidth occupancy limited</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="MPHY" class="step slide" data-x="950" data-y="-0600" data-z="-2750" data-rotate-x="-90">
+						<div class="slidetitle">Massive SIMO to bypass BW limitation</div>
+						<h3 class="contrib">Contribution C1.6.7: Massive MIMO Mitigation of Overspreading in Wideband Channels</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<strong>Wideband analysis</strong>
+								<ol>
+									<li>Fixed receive antennas $N_\mathrm{r}$</li>
+									<li>$B\to\infty \Rightarrow SNR\to0$</li>
+									<li>Rate nearly linear in power</li>
+									<li>Coherent channel :
+										$$\lim_{B\to\infty} B\log\left(1+\frac{PN_\mathrm{r}}{N_0B}\right)=\Theta\left(\frac{PN_\mathrm{r}}{N_0}\right)$$
+									</li>
+									<li>Non-coherent channel:
+										$$\Theta\left(N_{\mathrm{r}}\mathrm{SNR}-\frac{N_{\mathrm{r}}(N_{\mathrm{r}}+N_{\mathrm{t})}}{N_{\mathrm{t}}^2}\mathrm{SNR}^{1+\alpha}\right)$$
+									</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<strong>Massive MIMO analysis</strong>
+								<ol>
+									<li>Fixed bandwidth $B$</li>
+									<li>$N_\mathrm{r}\to\infty \Rightarrow SNR\to\infty$</li>
+									<li>Rate linear in bandwidth</li>
+									<li>Coherent channel :
+										$$\begin{split}
+										\lim_{N_\mathrm{r}\to\infty} B\log\left(1+\frac{PN_\mathrm{r}}{N_0B}\right)&\\
+										=\Theta\left(W\log(N_\mathrm{r})\right)&\\
+										\end{split}$$
+									</li>
+									<li>Non-coherent channel: No <em>combining gain</em></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+
+					<div id="MPHY2" class="step slide" data-x="950" data-y="-0600" data-z="-3500" data-rotate-x="-90">
+						<div class="slidetitle">Massive SIMO to bypass BW limitation II</div>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<strong>Joint analysis</strong> (w/ M. Chowdhury and A.Manolakos)
+								<ol>
+									<li>$B\to\infty$ and $N_\mathrm{r}\to\infty$, ¿SNR?</li>
+									<li>$\epsilon:=\lim_{B,N_{\mathrm{r}}\to\infty}\frac{\log B}{\log N_{\mathrm{r}}}$</li>
+									<li>$B=N_{\mathrm{r}}^{\epsilon}$</li>
+									<li>Rate limited by
+										$$
+										R=\begin{cases}
+										\Theta(W)&\epsilon\leq\epsilon_{th}\\
+										\Theta(\frac{P}{N_0})&\epsilon&gt;\epsilon_{th}\\
+										\end{cases}
+										$$
+									</li>
+									<li>Coherent channel trivial
+										<ol>
+											<li>Coherent combining gain $N_{\mathrm{r}}$</li>
+											<li>$\mathrm{SNR}\propto\frac{N_{\mathrm{r}}}{B}$</li>
+											<li>$\epsilon&lt;1\Rightarrow \mathrm{SNR}\to \infty$</li>
+											<li>$\epsilon&gt;1\Rightarrow \mathrm{SNR}\to 0$</li>
+										</ol>
+									</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<strong>Non coherent channel $\epsilon_{th}$</strong>
+								<ol>
+									<li>Critical Bandwidth $\propto \frac{P}{N_0}\sqrt{N_\mathrm{r}}$, suggests $\epsilon_{th}=\frac{1}{2}$</li>
+									<li>But the wideband analysis does not hold when $\epsilon&lt;1$</li>
+									<li>Alternate upper bound:
+										<ol>
+											<li>Received signal vector $\mathbf{y}\in \mathbb{C}^{1\times N_{\mathrm{r}}}$</li>
+											<li>$|\mathbf{y}|^2$ sufficient statistic</li>
+											<li>$\mathrm{E}[|\mathbf{y}|^2]=\frac{P\sqrt{N_{\mathrm{r}}}}{N_0B}$</li>
+											<li>If $\epsilon>\frac{1}{2}$ and $R>\Theta(\frac{P}{N_0})$, errors</li>
+										</ol>
+									</li>
+									<li>Achievable with multicarrier Pulse Energy Modulation</li>
+									<li>$\sqrt{N_{\mathrm{r}}}$ <em>diversity gain</em></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="CMAC"  class="step slide" data-x="950" data-y="-0600" data-z="-4250" data-rotate-x="-90">
+						<div class="slidetitle">New mmWave cellular paradigm</div>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<h3>LTE</h3>
+								<ol>
+									<li>Single-hop</li>
+									<li class="doublebreak">Omnidirectional</li>
+									<li class="doublebreak">Long range</li>
+									<li class="doublebreak">High BS density</li>
+									<li class="doublebreak">Static global TDD/FDD</li>
+								</ol>
+							</div>
+							<div class="twocolwidth">
+								<h3>mmWave</h3>
+								<ol>
+									<li>Multi-hop</li>
+									<li class="doublebreak">High directivity</li>
+									<li class="doublebreak">Shorter range</li>
+									<li class="doublebreak">Ultra-high BS density</li>
+									<li class="doublebreak">Dynamic TDD</li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="TMAC" class="step slide" data-x="950" data-y="-0600" data-z="-5000" data-rotate-x="-90">
+						<div class="slidetitle">Resource Allocation</div>
+						<h3 class="contrib">Contribution C1.6.7:  Dynamic Resource Allocation in a Tree-topology</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<img class="fillwidth" src="./img/treeDD.svg" alt="almost there"/>
+								<p class="figcaption">Tree topology with simultaneous link activation</p>
+							</div>
+							<div class="twocolwidth">
+								<strong> DTDD resource allocation</strong> <br/>(w/ R.Ford)
+								<ol>
+									<li><strong>Simplification: tree topology</strong></li>
+									<li class="doublebreak">Multi-user diversity: simultaneous connections per device</li>
+									<li class="doublebreak">Binary mixed-integer non-convex optimization					</li>
+									<li class="doublebreak"><strong>Closer to practical implementation</strong></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="MMAC" class="step slide" data-x="950" data-y="-0600" data-z="-5750" data-rotate-x="-90">
+						<div class="slidetitle">Resource Allocation</div>
+						<h3 class="contrib">Contribution C1.6.7:  Dynamic Link Scheduling in an Arbitrary-Topology</h3>
+						<div class="columnframe">
+							<div class="twocolwidth">
+								<img class="fillwidth" src="./img/arbitraryDD.svg" alt="almost there"/>
+								<p class="figcaption">Mesh topology with one2one link activation</p>
+							</div>
+							<div class="twocolwidth">
+								<strong> DTDD link scheduling</strong> <br/>(w/ J. Garc&iacute;a)
+								<ol>
+									<li>Full mesh topology</li>
+									<li class="doublebreak"><strong>Simplification: one connection per devide</strong></li>
+									<li>Max Weighted Queue Pressure (MQP)
+									</li>
+									<li class="doublebreak">Network Utility Maximization (NUM)
+									</li>
+
+									<li class="doublebreak"><strong>Higher theoretical capacity</strong></li>
+								</ol>
+							</div>
+						</div>
+					</div>
+
+					<div id="overview7" class="step glass" data-x="-0150" data-y="-1400"  data-scale="4"></div>
+
+					<div id="CON" class="step glass tease persist" data-x="-0150" data-y="0500"  data-scale="1">
+						<div class="slidetitle">Conclusions and Future Work</div>
+						<ol>
+							<li class="doublebreak">The point-to-point link model is nearly exhausted</li>
+							<li class="doublebreak">Future wireless networks require cooperative network solutions</li>
+							<li class="doublebreak">Cooperative diversity gain analysis
+								<ol>
+									<li>Relay channel</li>
+									<li>PHY techniques</li>
+									<li>Cooperative MAC functions</li>
+								</ol>
+							</li>
+							<li class="doublebreak">Current LTE-A standard too conservative
+								<ol>
+									<li>Fixed relaying only</li>
+									<li>Insufficient understanding of multi-hop</li>
+									<li>Prioritizes backwards compatibility and simplicity over optimized operation</li>
+								</ol>
+							</li>
+						</ol>
+					</div>
+					<div id="CON2" class="step glass tease persist" data-x="-0150" data-y="0950"  data-scale="1">
+						<ol style="counter-reset:li 4;">
+							<li class="doublebreak">Short term: cooperation through Cognitive Radio
+								<ol>
+									<li>Stubborn licensees use spectrum inefficiently</li>
+									<li>Cooperative Spectrum Leasing</li>
+									<li>Static scheme: only for very bad primaries</li>
+									<li>Dynamic scheme: minor to high gain depending on efficiency of primary</li>
+								</ol>
+							</li>
+							<li class="doublebreak">Potential for CSL in LTE-A
+								<ol>
+									<li>Puny gain with a single RN</li>
+									<li>Massive RN populations attractive, but still moderate gain</li>
+									<li>Niche applications: M2M, SG, P2P</li>
+								</ol>
+							</li>
+						</ol>
+					</div>
+					<div id="CON3" class="step glass tease persist" data-x="-0150" data-y="1400"  data-scale="1">
+						<ol style="counter-reset:li 6;">
+							<li class="doublebreak">Long term: next standard generation
+								<ol>
+									<li>Massive degrees of freedom (spatial, bandwidth, antennas...)</li>
+									<li>Approaching power limited capacity regimes</li>
+									<li>Imperative need of cooperative multi-hop</li>
+									<li>The less cooperative a protocol, the more limited</li>
+								</ol>
+							</li>
+							<li class="doublebreak">Re-think wireless networking: cooperative multi-hop by design
+								<ol>
+									<li>Understand the triple interaction:
+										<ul>
+											<li>Large bandwidth</li>
+											<li>Multi user allocation</li>
+											<li>Capacity</li>
+										</ul>
+									</li>
+									<li>Implement massive bandwidth signaling
+										<ul>
+											<li>Non-peaky and coherent (pilots)</li>
+											<li>Peaky and non-coherent (FSK)</li>
+										</ul>
+									</li>
+									<li>Massive no. of reception antennas</li>
+									<li>Dynamic Duplex link selection
+										<ul>
+											<li>Multi-user tree-topology practical power allocation</li>
+											<li>Single-user mesh-topology capacity-approaching scheduling</li>
+										</ul>
+									</li>
+								</ol>
+							</li>
+						</ol>
+					</div>
+					<div id="output" class="step glass tease persist" data-x="-0150" data-y="2100" data-z="-1" data-scale="1">
+						<div class="slidetitle">Research output</div>
+						<ol>
+							<li class="doublebreak">Four published journal papers</li>
+							<li class="doublebreak">Plus two submitted and one nearly ready for submission</li>
+							<li class="doublebreak">Six published conference papers</li>
+							<li class="doublebreak">Plus two accepted for this summer</li>
+							<li class="doublebreak">One research-license simulation software released</li>
+						</ol>
+						<button class="openDialog" href="#referencesDialog">View References</button>
+						<div id="referencesDialog" class="infoDialog" title="References">
+							<h1>Journal</h1>
+							<ol>
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Rangan, S.; Erkip, E. and Gonz&aacute;lez-Casta&ntilde;o, F.J., "Capacity Scaling of Cellular Networks with Arbitrary Infrastructure Density and Bandwidth," in preparation
+								<li> García-Rois, J.; <strong>G&oacute;mez-Cuba, F.</strong>; Gonz&aacute;lez-Casta&ntilde;o, F.J.; Burguillo-Rial, J.C:., Rangan, S. and Lorenzo, B. "On the Analysis of Scheduling in Dynamic Duplex Multi-Hop mmWave Cellular Systems'' IEEE Transactions on Wireless Communications (submitted)
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Du, J.; M&eacute;dard, M. and Erkip, E., "“Unified Capacity Limit of Non-coherent Wideband Fading Channels" IEEE Transactions on Information Theory (submitted)
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Asorey-Cacheda, R; and Gonz&aacute;lez-Casta&ntilde;o, F.J., "Smart Grid Last-Mile Communications Model and Its Application to the Study of Leased Broadband Wired-Access," , IEEE Transactions on Smart Grid, vol.4, no.1, pp.5,12, March 2013
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Asorey-Cacheda, R.; Gonz&aacute;lez-Casta&ntilde;o, F.J. and Huang, H., "Application of Cooperative Diversity to Cognitive Radio Leasing: Model and Analytical Characterization of Resource Gains,"  IEEE Transactions on Wireless Communications, vol.12, no.1, pp.40,49, January 2013
+								<li> Send&iacute;n-Ra&ntilde;a, P.; Gonz&aacute;lez-Casta&ntilde;o, F. J.; <strong>G&oacute;mez-Cuba, F.</strong>; Asorey-Cacheda, R. and  Pousada-Carballo, J. M., "Improving Management Performance of P2PSIP for Mobile Sensing in Wireless Overlays". Sensors, 13(11), 15364-15384 2013.
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Asorey-Cacheda, R. and Gonz&aacute;lez-Casta&ntilde;o, F.J., "A Survey on Cooperative Diversity for Wireless Networks," IEEE Communications Surveys &amp; Tutorials , vol.14, no.3, pp.822,835, Third Quarter 2012
+							</ol>
+							<h1>Conference</h1>
+							<ol>
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Du, J.; M&eacute;dard, M.; Erkip, E., "Bandwidth Occupancy of Non-Coherent Wideband Fading Channels" to appear in IEEE International Symposium on Information Theory (ISIT) 2015
+								<li> Ford, R.; <strong>G&oacute;mez-Cuba, F.</strong>; Mezzavilla, M.; Rangan, S., "Dynamic Time-domain Duplexing for Self-backhauled Millimeter Wave Cellular Networks" to appear in IEEE International Converence on Communications (ICC), June 2015
+								<li> Chowdhury, M.; Manolakos, A.; <strong>G&oacute;mez-Cuba, F.</strong>; Erkip, E. and Goldsmith, A.J. "Capacity Scaling in Noncoherent Wideband Massive SIMO Systems" EEE Information Theory Workshop (ITW), April 2015
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Rangan, S. and Erkip, E., "Scaling laws for Infrastructure Single and multihop wireless networks in wideband regimes," IEEE International Symposium on Information Theory (ISIT), July 2014
+								<li> <strong>G&oacute;mez-Cuba, F.</strong> and Gonz&aacute;lez-Casta&ntilde;o, F.J., "Improving third-party relaying for LTE-A: A realistic simulation approach,"  IEEE International Conference on Communications (ICC), June 2014
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Gonz&aacute;lez-Casta&ntilde;o, F. J. and Mu&ntilde;oz-Casta&ntilde;er, Jorge, "Is Cooperative Spectrum Leasing by Third-Party Relays Advantageous in Next-Generation Cellular Networks?,"  20th European Wireless Conference, May 2014
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Gonz&aacute;lez-Casta&ntilde;o, F.J. and P&eacute;rez-Garrido, C.P., "Practical Smart Grid traffic management in leased Internet access networks," IEEE International Energy Conference (ENERGYCON), May 2014
+								<li> <strong>G&oacute;mez-Cuba, F.</strong>; Asorey-Cacheda, R. and Gonz&aacute;lez-Casta&ntilde;o, F.J., "WiMAX for smart grid last-mile communications: TOS traffic mapping and performance assessment," 3rd IEEE PES Conference on Innovative Smart Grid Technologies Europe (ISGT Europe), Oct. 2012
+							</ol>
+						</div>
+					</div>
+					<div id="final" class="step glass" data-x="2500" data-y="2500" data-z="5500" data-rotate-x="-35" data-rotate-y="20" data-scale="4">
+						<div id="thankyou">THANK YOU</div>
+					</div>
+				</div>
+			</div><!--impress wrapper-->
+
+		</div><!--wrapper-->
+
+		<div class="hint">
+			Use a spacebar or arrow keys to navigate
+		</div>
+
+		<!-- IMPRESS.JS SCRIPT -->
+		<!-- <script>
+		if ("ontouchstart" in document.documentElement) {
+		document.querySelector(".hint").innerHTML = "Tap on the left or right to navigate";
+	}
+</script>-->
+
+<script src="https://cdn.jsdelivr.net/gh/impress/impress.js@2.0.0/js/impress.js"></script>
+		
+<script>
+if ( !window.location.search.match(/print/) ) {
+	impress().init();
+}else{
+	document.body.className += " printable ";
+}
+</script>
+
+<!-- JQUERY UI NAVIGATION MENU SCRIPT -->
+<script>
+$(function() {
+	$("#navmenu").accordion({
+		event: "click hoverintent",
+		heightStyle: "content",
+		active: false,
+		collapsible: true,
+	});
+	$.event.special.hoverintent = {
+		setup: function() {
+			$( this ).bind( "mouseover", jQuery.event.special.hoverintent.handler );
+		},
+		teardown: function() {
+			$( this ).unbind( "mouseover", jQuery.event.special.hoverintent.handler );
+		},
+		handler: function( event ) {
+			var currentX, currentY, timeout,
+			args = arguments,
+			target = $( event.target ),
+			previousX = event.pageX,
+			previousY = event.pageY;
+			function track( event ) {
+				currentX = event.pageX;
+				currentY = event.pageY;
+			};
+			function clear() {
+				target
+				.unbind( "mousemove", track )
+				.unbind( "mouseout", clear );
+				clearTimeout( timeout );
+			}
+			function handler() {
+				var prop,
+				orig = event;
+				if ( ( Math.abs( previousX - currentX ) +
+				Math.abs( previousY - currentY ) ) < 7 ) {
+					clear();
+					event = $.Event( "hoverintent" );
+					for ( prop in orig ) {
+						if ( !( prop in event ) ) {
+							event[ prop ] = orig[ prop ];
+						}
+					}
+					// Prevent accessing the original event since the new event
+					// is fired asynchronously and the old event is no longer
+					// usable (#6028)
+					delete event.originalEvent;
+					target.trigger( event );
+				} else {
+					previousX = currentX;
+					previousY = currentY;
+					timeout = setTimeout( handler, 100 );
+				}
+			}
+			timeout = setTimeout( handler, 100 );
+			target.bind({
+				mousemove: track,
+				mouseout: clear
+			});
+		}
+	};
+
+	$( ".infoDialog" ).dialog({
+		autoOpen: false,
+		width: 820,
+		height: 560,
+		modal: true
+	});
+
+	$( ".openDialog" ).button().click(function() {
+		$( $(this).attr('href') ).dialog( "open" );
+	});
+});
+</script>
+
+<script>
+/*when the page is reloaded on a sub href, modify the present/future status of the presentation*/
+if ( !window.location.search.match(/print/) ) {
+	$('.step').each(function(){ /*steps are ordered in the document and this query*/
+		if ($(this).hasClass('active')){
+			return false;
+		}else{
+			if ($(this).hasClass('persist')){
+				$(this).fadeTo(0,1);
+			}
+			if ($(this).hasClass('clear')){
+				$(this).fadeTo(0,0);
+			}
+			return true;
+		}
+	});
+
+	$('#navmenu a').click(function(){ /*when the navigation menu is used to move around, modify the present/future status of the presentation*/
+		bControl=false; /*whether we have processed 'destination' slide yet'*/
+		destination=$(this).attr('href'); /*name*/
+		$('.step').each(function(i){  /*steps are ordered in the document and this query*/
+			if (bControl){
+				if ($(this).hasClass('appearify')){
+					$(this).fadeTo(0,0);
+				}
+			}else{
+				if ($(this).hasClass('persist')){
+					$(this).fadeTo(0,1);
+				}
+				if (('#'+$(this).attr('id'))==destination){
+					bControl=true;
+				}else{
+					if ($(this).hasClass('clear')){
+						$(this).fadeTo(0,0);
+					}
+				}
+			}
+		});
+	});
+}
+</script>
+
+</body>
+
+</html>

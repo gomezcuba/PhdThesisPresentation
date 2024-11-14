@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   viewBox="0 0 20 20"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%"
+   sodipodi:docname="print.svg">
+  <defs
+     id="defs32" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview30"
+     showgrid="false"
+     inkscape:zoom="11.8"
+     inkscape:cx="10"
+     inkscape:cy="9.0395753"
+     inkscape:window-x="2367"
+     inkscape:window-y="334"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(-607.63544,-694.58531)"
+     id="g6"
+     style="fill:none;stroke:#ffffff">
+    <g
+       transform="matrix(0.81819677,0,0,0.81819677,553.91837,678.75131)"
+       stroke-miterlimit="4"
+       id="g8"
+       stroke-dasharray="none"
+       stroke="#333"
+       style="fill:none;stroke:#ffffff">
+      <g
+         transform="matrix(1,0,0,0.96585221,-18.75,5.5913535)"
+         id="g10"
+         stroke-width="1.24361777"
+         style="fill:none;stroke:#ffffff">
+        <g
+           id="g12"
+           style="fill:none;stroke:#ffffff">
+          <rect
+             style="enable-background:accumulate;color:#000000;fill:none;stroke:#ffffff"
+             height="13.652"
+             width="22"
+             stroke-miterlimit="4"
+             y="20.96"
+             x="85.625"
+             id="rect14"
+             stroke-dasharray="none"
+             stroke-linejoin="bevel"
+             stroke-linecap="square"
+             stroke-width="1.2436"
+             stroke="#333"
+             fill-rule="nonzero"
+             fill="#999" />
+        </g>
+        <rect
+           style="enable-background:accumulate;color:#000000;fill:none;stroke:#ffffff"
+           height="7.5512"
+           width="22"
+           y="27.061"
+           x="85.625"
+           id="rect16"
+           stroke-linejoin="bevel"
+           stroke-linecap="square"
+           fill-rule="nonzero"
+           fill="#FFF" />
+      </g>
+      <rect
+         style="enable-background:accumulate;color:#000000;fill:none;stroke:#ffffff"
+         height="8.0475"
+         width="14.14"
+         y="20.574"
+         x="70.805"
+         id="rect18"
+         stroke-linejoin="bevel"
+         stroke-linecap="square"
+         stroke-width="1.2222"
+         fill-rule="nonzero"
+         fill="#FFF" />
+      <path
+         style="enable-background:accumulate;color:#000000;fill:none;stroke:#ffffff"
+         d="m106.07,25.82c0,0.87868-0.71231,1.591-1.591,1.591-0.87868,0-1.591-0.71231-1.591-1.591,0-0.87868,0.71231-1.591,1.591-1.591,0.87868,0,1.591,0.71231,1.591,1.591z"
+         transform="matrix(1.1702362,0,0,1.1325189,-35.247305,0.62457569)"
+         id="path20"
+         stroke-linejoin="bevel"
+         stroke-linecap="square"
+         stroke-width="1.06165338"
+         fill-rule="nonzero"
+         fill="#FFF" />
+      <g
+         transform="matrix(1.2269052,0,0,0.96585221,-40.682118,4.7585523)"
+         id="g22"
+         stroke-width="1.12274563"
+         style="fill:none;stroke:#ffffff">
+        <rect
+           style="enable-background:accumulate;color:#000000;fill:none;stroke:#ffffff"
+           transform="scale(1,-1)"
+           height="8.1907"
+           width="11.841"
+           y="-39.153"
+           x="90.704"
+           id="rect24"
+           stroke-linejoin="bevel"
+           stroke-linecap="square"
+           fill-rule="nonzero"
+           fill="#FFF" />
+        <path
+           d="m92.387,36.616,8.3085,0"
+           id="path26"
+           stroke-linejoin="miter"
+           stroke-linecap="butt"
+           fill="none"
+           style="fill:none;stroke:#ffffff" />
+        <path
+           d="m92.387,33.866,8.3085,0"
+           id="path28"
+           stroke-linejoin="miter"
+           stroke-linecap="butt"
+           fill="none"
+           style="fill:none;stroke:#ffffff" />
+      </g>
+    </g>
+  </g>
+</svg>

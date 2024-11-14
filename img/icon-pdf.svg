@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg2"
+   viewBox="0 0 74 100"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   width="100%"
+   height="100%"
+   sodipodi:docname="icon-pdf.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview22"
+     showgrid="false"
+     inkscape:zoom="2.36"
+     inkscape:cx="13.57848"
+     inkscape:cy="50"
+     inkscape:window-x="2330"
+     inkscape:window-y="335"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient3046"
+       x1="105"
+       gradientUnits="userSpaceOnUse"
+       y1="123"
+       gradientTransform="translate(2,922.36)"
+       x2="-80"
+       y2="-112">
+      <stop
+         id="stop3602"
+         stop-color="#e6e6e6"
+         offset="0" />
+      <stop
+         id="stop3604"
+         stop-color="#f9f9f9"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient3048"
+       x1="93"
+       gradientUnits="userSpaceOnUse"
+       y1="944.36"
+       gradientTransform="translate(2,-2)"
+       x2="80"
+       y2="957.36">
+      <stop
+         id="stop3610"
+         stop-color="#ccc"
+         offset="0" />
+      <stop
+         id="stop3616"
+         stop-color="#e6e6e6"
+         offset=".22008" />
+      <stop
+         id="stop3618"
+         stop-color="#fff"
+         offset=".46933" />
+      <stop
+         id="stop3612"
+         stop-color="#e6e6e6"
+         offset="1" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3046"
+       id="linearGradient3010"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(2,922.36)"
+       x1="105"
+       y1="123"
+       x2="-80"
+       y2="-112" />
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient3048"
+       id="linearGradient3012"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(2,-2)"
+       x1="93"
+       y1="944.36"
+       x2="80"
+       y2="957.36" />
+  </defs>
+  <g
+     id="g3872"
+     transform="matrix(0.86046,0,0,0.86207,-18.4998,-801.602)"
+     style="fill-rule:evenodd;stroke:#808080;stroke-width:1px;stroke-linejoin:round;fill:#ffffff">
+    <path
+       id="path3874"
+       d="M 82,930.36 H 22 v 115 h 85 v -90 l -25,-25 z"
+       style="fill:#ffffff"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3876"
+       d="m 107,955.36 -25,-25 c 1.8633,8.3333 2.1329,16.667 0,25 9.9055,-1.935 17.128,-0.56751 25,0 z"
+       style="fill:#ffffff"
+       inkscape:connector-curvature="0" />
+  </g>
+  <rect
+     id="rect3878"
+     height="31.256001"
+     width="70.115997"
+     y="34.378025"
+     x="1.9419998"
+     style="fill:#999999;stroke-width:0" />
+  <text
+     id="text3880"
+     style="font-size:24.54899979px;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;font-family:Sans"
+     xml:space="preserve"
+     font-size="24.549px"
+     line-height="125%"
+     y="58.950718"
+     x="12.594011"
+     sodipodi:linespacing="125%"><tspan
+       id="tspan3882"
+       y="58.950718"
+       x="12.594011">PDF</tspan></text>
+  <metadata
+     id="metadata20">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/publicdomain/" />
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="http://openclipart.org/">
+            <dc:title>Openclipart</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:title>Icon PDF - Ãcone</dc:title>
+        <dc:date>2012-08-23T09:00:35</dc:date>
+        <dc:description>Icon PDF - Ãcone</dc:description>
+        <dc:source>https://openclipart.org/detail/171857/icon-pdf---Ãcone-by-leandrosciola-171857</dc:source>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>leandrosciola</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>Icon</rdf:li>
+            <rdf:li>Icon PDF</rdf:li>
+            <rdf:li>Ãcone</rdf:li>
+            <rdf:li>Ãcone PDF</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/publicdomain/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>
