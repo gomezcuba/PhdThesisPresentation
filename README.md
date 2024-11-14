@@ -13,5 +13,7 @@ My PhD thesis presentation using impress.js
 * jquery
 * jqueryUI
 
+## Disclaimer
 
+I made this presentation in 2015, using contemporary local copies of the dependencies. This code has not been touched ever since, except for the fact that I have replaced the dependencies with CDN versions. I offer no support or guarantee that anything works and frankly I do not care if it does not.
 
